@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charsrt="UTF-8">
+        <title>EyeClinic</title>
+        <link rel="stylesheet" href="src/styles/patients.css">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    </head>
+    <body>
+        <div class = "sidebar">
+        
+            <div class="sidebar-brand">           
+                <h2><img width="57" height="57" src="https://img.icons8.com/color/48/vision.png" alt="vision"/> Eye Clinic</h2>
+            </div>
+
+            
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <span><img width="45" height="40" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/external-medical-record-health-and-medical-flatart-icons-outline-flatarticons.png" alt="external-medical-record-health-and-medical-flatart-icons-outline-flatarticons"/></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="patients.html" class="active">
+                            <span><img width="38" height="35" src="https://img.icons8.com/external-fauzidea-detailed-outline-fauzidea/64/external-patients-pandemic-fauzidea-detailed-outline-fauzidea.png" alt="external-patients-pandemic-fauzidea-detailed-outline-fauzidea"/></span>
+                            <span>Patients</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="staff.html">
+                            <span><img width="43" height="40" src="https://img.icons8.com/dotty/80/medical-doctor.png" alt="medical-doctor"/></span>
+                            <span>Staff</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="services.html">
+                            <span><img width="40" height="30" src="https://img.icons8.com/external-outline-lafs/64/external-Medical-Services-medicine-outline-lafs.png" alt="external-Medical-Services-medicine-outline-lafs"/></span>
+                            <span>Appointments</span>
+                        </a>    
+                    </li>
+
+                    <li>
+                        <a href="supplies.html">
+                            <span><img width="30" height="30" src="https://img.icons8.com/ios/50/medical-insurance--v1.png" alt="medical-insurance--v1"/></span>
+                            <span>Supplies</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html" class="log-out">
+                            <span><img width="30" height="30" src="src\img\logout.png" alt="logout"></span>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="main-content">
+            <div class="patients-buttons">
+                <a href="patients1.html" class="padd-button">
+                    <img src="src\img\addicon.png" alt="add">
+                    <div>Add A Patient</div>
+                </a>
+            </div>
+            <header>
+                <h2>
+                    <lable for ="">
+                        <span class="las la-bars"></span>
+                    </lable>
+                    Patients
+                </h2>
+                <div class="user-wrapper">
+                    <img src="src/img/2.jpg" width="40px" height="40px" alt="">
+                    <div>
+                        <h4>Mariouma</h4>
+                        <small>Super Admin</small>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="patient-table">    
+                    <table id="dynamic-patient-table">
+                        <thead>
+                          <tr id="patients">
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button class="table-button">Delete</button>
+                                </td>
+                            </tr>
+                  
+                        </tbody>
+                    </table>
+                </div>
+
+            </main>
+            <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+            <script src="src/pages/patients.js"></script>
+
+
+    </body>        
+</html>

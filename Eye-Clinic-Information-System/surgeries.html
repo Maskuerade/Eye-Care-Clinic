@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charsrt="UTF-8">
+        <title>Responsive Registration Form</title>
+        <link rel="stylesheet" href="src/styles/surgeries.css">
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <body>
+            <div class="container">
+                
+                <h1 class="form-title">Registration</h1>
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="First Name">Doctor's ID</label>
+                            <input type="text" id="Doctor ID" name="fullName" placeholder="Doctor's ID"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="username">Patient's ID</label>
+                            <input type="text" id="Patient ID" name="username" placeholder="Patient's ID"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="email">Date</label>
+                            <input type="text" id="Date" name="email" placeholder="Date"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="phoneNumber">Time</label>
+                            <input type="text" id="Time" name="phoneNumber" placeholder="Time"/>
+                        </div>
+                    </div>
+                        <button type="submit" id="submit-btn">Add</button>
+                </form>
+            </div>
+
+            <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+            <script src="src/pages/surgeries.js"></script>
+        </body>
+    </head>
+</html>
