@@ -89,3 +89,17 @@ PatientsPromise.then((Patients)=>{
 
 })
 
+function deleteRow(button,tableName,id){
+
+  async function DeleteFromTable(){
+    const { data, error } = await _supabase
+  .from(tableName)
+  .delete()
+  .eq( "id" , id)
+  console.log('Item deleted')
+  console.log("rerrrrrr", error);
+  }
+  DeleteFromTable()
+  const rowtobeDeleted= button.parentNode.parentNode
+  rowtobeDeleted.remove()
+}

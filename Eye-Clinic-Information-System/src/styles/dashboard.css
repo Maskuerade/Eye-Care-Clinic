@@ -114,33 +114,6 @@ header label span {
 
 }
 
-.search-wrapper {
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    overflow-x: hidden;
-    text-align: left;
-    flex-direction: row;
-}
-
-
-.search-wrapper span {
-    display: inline-block;
-    padding: 0rem 1rem; 
-    font-size: 1.5rem;
-    flex: 1;
-}
-
-.search-wrapper input {
-    height:100%;
-    padding: .5rem;
-    border: none;
-    outline: none;
-    font-size: 19px;
-}
-
 .user-wrapper {
     display: flex;
     align-items: center;
@@ -228,10 +201,11 @@ main {
     left: 0px;
     border: 2px solid #3f99a2;
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     border-collapse: collapse;
     border-radius: 10px;
     width: 100vw;
+    bottom: 0;
 
 }
 
@@ -253,8 +227,6 @@ td {
     text-align: center;
     -webkit-text-fill-color: #000000;
     border: 1px solid #7AC9D0;
-    /* padding: 10px; */
-    /* height: 60px; */
     font-size: 21px;
 
 }

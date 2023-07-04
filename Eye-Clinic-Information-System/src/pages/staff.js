@@ -81,7 +81,6 @@ DoctorsPromise.then((Doctor)=>{
     deleteButton.classList.add("delete-button");
     deleteButton.setAttribute("onclick", `deleteRow(this,"Doctor",${item.id})`);
     ActionsCell.appendChild(deleteButton);
-
     row.appendChild(ActionsCell);
 
     row.style.textAlign = "center";
@@ -156,7 +155,7 @@ drbtn.addEventListener("click", (e) =>{
       deleteButton.textContent = "Delete";
       deleteButton.setAttribute("id", "deleteButton_" + i);
       deleteButton.classList.add("delete-button");
-      deleteButton.setAttribute("onclick", `deleteRow(this,"Doctor",${item.id})`);
+      deleteButton.setAttribute("onclick", `deleteRow(this,"Doctors",${item.id})`);
       ActionsCell.appendChild(deleteButton);
   
       row.appendChild(ActionsCell);
@@ -243,7 +242,7 @@ let OthersPromise = new Promise(async (resolve, reject) => {
         deleteButton.textContent = "Delete";
         deleteButton.setAttribute("id", "deleteButton_" + i);
         deleteButton.classList.add("delete-button");
-        deleteButton.setAttribute("onclick", `deleteRow(this,"Doctor",${item.id})`);
+        deleteButton.setAttribute("onclick", `deleteRow(this,"Others",${item.id})`);
         ActionsCell.appendChild(deleteButton);
     
         row.appendChild(ActionsCell);
@@ -262,64 +261,64 @@ let OthersPromise = new Promise(async (resolve, reject) => {
 //Nurses
 let nursebtn = document.getElementById("nurse-btn")
 
-  nursebtn.addEventListener("click", (e) => {
-      const thead = document.getElementById("btats");
-      thead.innerHTML = "";
+  // nursebtn.addEventListener("click", (e) => {
+  //     const thead = document.getElementById("btats");
+  //     thead.innerHTML = "";
   
-      //zawed aw ghayar column heading and repeat for each button 
-      let heads = "<th>Nurse ID</th>";
-      heads += "<th>Name</th>";
-      // heads += "<th>Last Name</th>";
-      heads += "<th>Working Hours</th>";
-      heads += "<th>Dr Name</th>";
-      heads += "<th>Phone Number</th>";
-      heads += "<th>Address</th>";
-      heads += "<th>Actions</th>";
+  //     //zawed aw ghayar column heading and repeat for each button 
+  //     let heads = "<th>Nurse ID</th>";
+  //     heads += "<th>Name</th>";
+  //     // heads += "<th>Last Name</th>";
+  //     heads += "<th>Working Hours</th>";
+  //     heads += "<th>Dr Name</th>";
+  //     heads += "<th>Phone Number</th>";
+  //     heads += "<th>Address</th>";
+  //     heads += "<th>Actions</th>";
   
-      thead.innerHTML = heads;
-      const columnNames = ['Nurse ID', 'Name', 'Working Hours', 'Dr Name', 'Phone Number', 'Address'];
+  //     thead.innerHTML = heads;
+  //     const columnNames = ['Nurse ID', 'Name', 'Working Hours', 'Dr Name', 'Phone Number', 'Address'];
     
-      let tablebody = document
-        .getElementById("dynamic-table")
-        .getElementsByTagName("tbody")[0];
-      tablebody.innerHTML = "";
+  //     let tablebody = document
+  //       .getElementById("dynamic-table")
+  //       .getElementsByTagName("tbody")[0];
+  //     tablebody.innerHTML = "";
   
-      for (var i = 0; i < Nurses.length; i++) {
-        let item = Nurses[i];
-        let row = document.createElement("tr");
+  //     for (var i = 0; i < Nurses.length; i++) {
+  //       let item = Nurses[i];
+  //       let row = document.createElement("tr");
   
-        let IDcell = document.createElement("td");
-        IDcell.textContent = item.ID;
-        row.appendChild(IDcell);
+  //       let IDcell = document.createElement("td");
+  //       IDcell.textContent = item.ID;
+  //       row.appendChild(IDcell);
   
-        let firstnamecell = document.createElement("td");
-        firstnamecell.textContent = item.name;
-        row.appendChild(firstnamecell);
+  //       let firstnamecell = document.createElement("td");
+  //       firstnamecell.textContent = item.name;
+  //       row.appendChild(firstnamecell);
   
-        let workinghourscell = document.createElement("td");
-        workinghourscell.textContent = item.workinghours;
-        row.appendChild(workinghourscell);
+  //       let workinghourscell = document.createElement("td");
+  //       workinghourscell.textContent = item.workinghours;
+  //       row.appendChild(workinghourscell);
   
-        let drnamecell = document.createElement("td");
-        drnamecell.textContent = item.drname;
-        row.appendChild(drnamecell);
+  //       let drnamecell = document.createElement("td");
+  //       drnamecell.textContent = item.drname;
+  //       row.appendChild(drnamecell);
   
-        let phoneNumberCell = document.createElement("td");
-        phoneNumberCell.textContent = item.phonenum;
-        row.appendChild(phoneNumberCell);
+  //       let phoneNumberCell = document.createElement("td");
+  //       phoneNumberCell.textContent = item.phonenum;
+  //       row.appendChild(phoneNumberCell);
   
-        let addressCell = document.createElement("td");
-        addressCell.textContent = item.address;
-        row.appendChild(addressCell);
+  //       let addressCell = document.createElement("td");
+  //       addressCell.textContent = item.address;
+  //       row.appendChild(addressCell);
   
-        row.style.textAlign = "center";
-        tablebody.style.borderBottom = "3px solid black";
+  //       row.style.textAlign = "center";
+  //       tablebody.style.borderBottom = "3px solid black";
   
-        tablebody.appendChild(row);
+  //       tablebody.appendChild(row);
   
-        tablebody.style.blockSize = "40px";
-      }
-    });
+  //       tablebody.style.blockSize = "40px";
+  //     }
+  //   });
 
     
 
@@ -395,7 +394,7 @@ nursebtn.addEventListener("click", (e) =>{
       deleteButton.textContent = "Delete";
       deleteButton.setAttribute("id", "deleteButton_" + i);
       deleteButton.classList.add("delete-button");
-      deleteButton.setAttribute("onclick", `deleteRow(this,"Tech",${item.id})`);
+      deleteButton.setAttribute("onclick", `deleteRow(this,"Nurses",${item.id})`);
       ActionsCell.appendChild(deleteButton);
 
       row.appendChild(ActionsCell);
@@ -407,3 +406,21 @@ nursebtn.addEventListener("click", (e) =>{
     }
   })
 });
+
+
+
+
+function deleteRow(button,tableName,id){
+
+  async function DeleteFromTable(){
+    const { data, error } = await _supabase
+  .from(tableName)
+  .delete()
+  .eq( "id" , id)
+  console.log('Item deleted')
+  console.log("rerrrrrr", error);
+  }
+  DeleteFromTable()
+  const rowtobeDeleted= button.parentNode.parentNode
+  rowtobeDeleted.remove()
+}

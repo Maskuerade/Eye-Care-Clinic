@@ -22,7 +22,7 @@ form.addEventListener('submit',(e)=>{
     let PhoneNumber = phonenumber.value
     let Address = address.value
 
-    async function insertWorker(){
+    async function insertOthers(){
     const { data, error } = await _supabase
     .from('Others')
     .insert([
@@ -37,7 +37,7 @@ form.addEventListener('submit',(e)=>{
     redirect()
 }
     
-insertWorker()
+insertOthers()
 
 
 })
